@@ -18,7 +18,7 @@ const Interest = ({ interests }) => {
 
   const onSubmit = (newInterestList) => {
     console.log(newInterestList);
-    axios.post('http://localhost:8000/api/user/addInterest', {interests: newInterestList}, {
+    axios.post('https://exp-assignment-api.vercel.app/api/user/addInterest', {interests: newInterestList}, {
       headers: {
         Authorization: "Bearer "+Cookies.get('token')
       }

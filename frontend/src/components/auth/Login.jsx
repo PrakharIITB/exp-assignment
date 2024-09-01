@@ -39,7 +39,7 @@ const Login = ({ changeComp }) => {
       })
       return ;
     }
-    axios.post("http://localhost:8000/api/login", {
+    axios.post("https://exp-assignment-api.vercel.app/api/login", {
       email: email,
       password: password
     })

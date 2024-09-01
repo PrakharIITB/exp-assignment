@@ -31,7 +31,7 @@ const BookList = ({ books }) => {
     }
     data = {...data, pageCount: Number(data.pageCount)}
     console.log(data);
-    axios.post('http://localhost:8000/api/book/', data, {
+    axios.post('https://exp-assignment-api.vercel.app/api/book/', data, {
       headers: {
         Authorization: "Bearer "+ Cookies.get('token')
       }

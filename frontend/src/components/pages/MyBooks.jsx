@@ -17,7 +17,7 @@ const MyBooks = () => {
       alert("Log in first");
       navigate('/')
     }
-    axios.get('http://localhost:8000/api/user/getMyBooks', {
+    axios.get('https://exp-assignment-api.vercel.app/api/user/getMyBooks', {
       headers: {
         Authorization: 'Bearer '+token
       }
@@ -29,7 +29,7 @@ const MyBooks = () => {
     .catch((err) => {
       console.log(err);
     })
-    axios.get('http://localhost:8000/api/user/getMyBookForExchange', {
+    axios.get('https://exp-assignment-api.vercel.app/api/user/getMyBookForExchange', {
       headers: {
         Authorization: 'Bearer '+token
       }
@@ -45,7 +45,7 @@ const MyBooks = () => {
 
   const addForExchange = (book) => {
     console.log(book);
-    axios.post("http://localhost:8000/api/book/addExchange", {bookId: book._id}, {
+    axios.post("https://exp-assignment-api.vercel.app/api/book/addExchange", {bookId: book._id}, {
       headers: {
         Authorization: 'bearer '+ token
 
@@ -73,7 +73,7 @@ const MyBooks = () => {
   }
 
   const removeFromExchange = (book) => {
-    axios.post("http://localhost:8000/api/book/removeExchange", {bookId: book._id}, {
+    axios.post("https://exp-assignment-api.vercel.app/api/book/removeExchange", {bookId: book._id}, {
       headers: {
         Authorization: 'bearer '+token
       }
@@ -93,7 +93,7 @@ const MyBooks = () => {
   }
 
   const deleteBook = (book) => {
-    axios.delete(`http://localhost:8000/api/book?_id=${book._id}`,{
+    axios.delete(`https://exp-assignment-api.vercel.app/api/book?_id=${book._id}`,{
       headers: {
         Authorization: 'bearer '+token,
       },

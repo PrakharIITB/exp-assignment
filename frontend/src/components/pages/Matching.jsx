@@ -19,7 +19,7 @@ const Matching = () => {
       navigate("/");
     }
     axios
-      .get("http://localhost:8000/api/user/possibleMatches", {
+      .get("https://exp-assignment-api.vercel.app/api/user/possibleMatches", {
         headers: {
           Authorization: "bearer " + token,
         },
@@ -37,7 +37,7 @@ const Matching = () => {
   const emails = Object.keys(possibleExchanges);
 
   const initiateRequest = (details, email) => {
-    axios.post('http://localhost:8000/api/user/initiateRequest', {
+    axios.post('https://exp-assignment-api.vercel.app/api/user/initiateRequest', {
       requestTo: details.booksIn[0].ownedBy,
       bookIn: details.booksIn[0]._id,
       bookOut: details.booksOut[0]._id

@@ -15,7 +15,7 @@ const ProfileBox = () => {
 
   useEffect(() => {
     const token = Cookies.get('token');
-    axios.get('http://localhost:8000/api/user', {
+    axios.get('https://exp-assignment-api.vercel.app/api/user', {
       headers: {
         Authorization: "Bearer "+token
       }

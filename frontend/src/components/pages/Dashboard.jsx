@@ -17,7 +17,7 @@ const Dashboard = () => {
       alert("Log in first");
       navigate('/')
     }
-    axios.get('http://localhost:8000/api/user/getExchangeBooks', {
+    axios.get('https://exp-assignment-api.vercel.app/api/user/getExchangeBooks', {
       headers: {
         Authorization: "Bearer "+token
       }

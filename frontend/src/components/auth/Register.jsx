@@ -38,7 +38,7 @@ const Register = ({ changeComp }) => {
       return;
     }
     setIsSubmitting(true);
-    axios.post('http://localhost:8000/api/register', {
+    axios.post('https://exp-assignment-api.vercel.app/api/register', {
       email: email,
       password: password,
       first: first,
