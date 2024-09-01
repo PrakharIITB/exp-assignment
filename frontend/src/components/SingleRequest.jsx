@@ -3,9 +3,6 @@ import { Box, Text, Stack, Button} from "@chakra-ui/react";
 const SingleRequest = ( {name, booksIn, booksOut, status, initiateRequest} ) => {
 
     const text = status === false ? "Request for Exchange": "Accept Request";
-    console.log(booksIn);
-    console.log(booksOut);
-    console.log(name);
 
     return (
         <Stack padding={"1rem"} bgColor={'lightcyan'}>
