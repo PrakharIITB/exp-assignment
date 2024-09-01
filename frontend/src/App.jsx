@@ -1,6 +1,6 @@
 import "./App.css";
 import Dashboard from "./components/pages/Dashboard";
-import Home from "./components/pages/home";
+import Home from "./components/pages/Home";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import MyBooks from "./components/pages/MyBooks";
 import Matching from "./components/pages/Matching";
