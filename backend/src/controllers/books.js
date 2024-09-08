@@ -27,7 +27,7 @@ export const addBook = async (req, res) => {
         bookList.push(book._id);
         const updatedUser = await USER.findOneAndUpdate({_id: id}, {bookList: bookList})
 
-        return res.status(201).json({message: "Book added successfully"});
+        return res.status(201).json({book: book, message: "Book added successfully"});
 
     }
     catch(err){
@@ -39,7 +39,7 @@ export const updateBook = async (req, res) => {
     try{
         const {_id, ...details} = req.body;
         const book = await BOOK.findOneAndUpdate({_id: _id}, {details});
-        return res.status(200).json({message: "Book updated successfully"});
+        return res.status(200).json({book: book, message: "Book updated successfully"});
     }
     catch(err){
         console.log(err);
@@ -81,7 +81,7 @@ export const addBookForExchange = async (req, res) => {
         booksToExchange.push(bookId);
         const updatedBook = await BOOK.findOneAndUpdate({_id: bookId}, {isExchange: true})
         const updatedUser = await USER.findOneAndUpdate({ _id: id }, {booksToExchange: booksToExchange});
-        return res.status(200).json({message: "Book successfully added for exchange"})
+        return res.status(200).json({book: updatedBook, message: "Book successfully added for exchange"})
     }
     catch(err){
         return res.status(500).json({error: err, message: "Error adding book for exchange"})
@@ -100,7 +100,7 @@ export const removeBookFromExchange = async (req, res) => {
         })
         const updatedBook = await BOOK.findOneAndUpdate({_id: bookId}, {isExchange: false})
         const updatedUser = await USER.findOneAndUpdate({ _id: id }, {booksToExchange: booksToExchange});
-        return res.status(200).json({message: "Book successfully removed from exchange"})
+        return res.status(200).json({book: updatedBook, message: "Book successfully removed from exchange"})
     }
     catch(err){
         return res.status(500).json({error: err, message: "Error removing book from exchange"})
